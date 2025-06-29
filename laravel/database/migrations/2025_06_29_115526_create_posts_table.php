@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('theme');
             $table->longText('post');
             $table->string('url');
-            $table->date('date');
-            $table->date('date_for_posted');
-            $table->dateTime('time_for_posted');
+            $table->date('date')->nullable();
+            $table->date('date_for_posted')->nullable();
+            $table->dateTime('time_for_posted')->nullable();
+            $table->dateTime('posted_at')->nullable();
         });
     }
 

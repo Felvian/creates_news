@@ -16,12 +16,12 @@ Artisan::command('posts:send-scheduled', function () {
         $token = env('TELEGRAM_BOT_TOKEN');
         $chatId = env('TELEGRAM_CHANNEL_ID');
 
-        $response = Http::post("https://api.telegram.org/bot $token/sendMessage", [
+        $response = Http::withOptions(['verify'=>false,])->post("https://api.telegram.org/bot$token/sendMessage", [
             'chat_id' => $chatId,
-            'text' => "*{$post->title}*\n\n{$post->content}",
+            'text' => "*{$post->theme}*\n\n{$post->post}",
             'parse_mode' => 'Markdown',
         ]);
-
+        $this->info($response);
         if ($response->successful()) {
             $post->update(['posted_at' => now()]);
         } else {
