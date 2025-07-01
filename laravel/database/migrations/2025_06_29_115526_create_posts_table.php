@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->date('date_for_posted')->nullable();
             $table->dateTime('time_for_posted')->nullable();
-            $table->dateTime('posted_at')->nullable();
+            $table->boolean('posted_at')->nullable();
         });
     }
 

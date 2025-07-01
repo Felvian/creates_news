@@ -16,39 +16,53 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Product name
+                    Тема
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Color
+                    Пост
+                </th>
+                 <th scope="col" class="px-6 py-3">
+                    Медиа 
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Category
+                    Дата для выгрузки 
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Price
+                    Выгружено 
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Edit</span>
+                    <span class="sr-only">Открыть</span>
                 </th>
             </tr>
             </thead>
             <tbody>
             @foreach($posts as $post)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
+                <td class="px-6 py-4">
+                    {{$post->theme}}
+                </td>
                 <td class="px-6 py-4">
                     {{$post->post}}
                 </td>
                 <td class="px-6 py-4">
-                    Laptop
+                    @if ($post->media)
+                        Есть
+                    @else
+                        Нет
+                    @endif
                 </td>
                 <td class="px-6 py-4">
-                    $2999
+                    {{$post->time_for_posted}}
+                </td>
+                <td class="px-6 py-4">
+                    @if ($post->posted_at)
+                        Выгружено
+                    @else
+                        Не выгружено
+                    @endif
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <a href="/posts/{{$post->id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="/posts/{{$post->id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Открыть</a>
                 </td>
             </tr>
             </tbody>

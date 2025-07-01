@@ -9,5 +9,5 @@ class Posts extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['post', 'date_for_posted', 'theme', 'time_for_posted'];
+    protected $fillable = ['post', 'date_for_posted', 'theme', 'time_for_posted', 'posted_at'];
 }
