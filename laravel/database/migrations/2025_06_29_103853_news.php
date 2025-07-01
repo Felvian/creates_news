@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('theme');
-            $table->longText('post');
-            $table->string('url');
-            $table->date('date');
+            $table->string('theme')->nullable;
+            $table->longText('post')->nullable;
+            $table->string('url')->nullable;
+            $table->date('date')->nullable;
+            $table->longText('media')->nullable;
 
         });
     }

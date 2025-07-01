@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('theme');
-            $table->longText('post');
-            $table->string('url');
+            $table->string('theme')->nullable();
+            $table->longText('post')->nullable();
+            $table->string('url')->nullable()->nullable();
             $table->date('date')->nullable();
-            $table->date('date_for_posted')->nullable();
             $table->dateTime('time_for_posted')->nullable();
             $table->boolean('posted_at')->nullable();
+            $table->longText('media')->nullable();
         });
     }
 
