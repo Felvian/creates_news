@@ -30,7 +30,7 @@
     </div>
     <div>
         <label for="published_at">Дата публикации:</label>
-        <input type="datetime-local" name="time_for_posted" id="time_for_posted"
+        <input type="datetime-local" name="time_for_posted" id="time_for_posted" class="border-blue-500 border-2 border-solid"
                value="{{ old('time_for_posted', optional($post->published_at)->format('Y-m-d\TH:i')) }}">
     </div>
     <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Обновить</button>

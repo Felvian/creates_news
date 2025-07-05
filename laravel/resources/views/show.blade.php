@@ -11,12 +11,7 @@
 <body>
     <div class="container mx-auto p-4">
         <div class="py-5"><h1 class="font-bold text-2xl">{{ $post->theme }}</h1></div>
-        @foreach(explode(',', $post->media) as $link)
-            @php
-                $trimmedLink = trim($link); // Убираем лишние пробелы
-            @endphp
-            <img src="{{ $trimmedLink }}" target="_blank"></a><br>
-        @endforeach
+
         <pre style="white-space: pre-wrap;">{{ $post->post }}</pre>
         @foreach(explode(',', $post->url) as $link)
             @php
